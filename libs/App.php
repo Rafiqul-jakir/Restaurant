@@ -1,5 +1,4 @@
 <?php
-    require "../config/config.php";
 
     class App{
         public $host = HOST;
@@ -136,7 +135,5 @@
 
     //end of App Class    
     }
-
-    $obj = new App;
 
 ?>
