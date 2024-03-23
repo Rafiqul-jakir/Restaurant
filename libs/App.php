@@ -34,7 +34,7 @@
                 return false;
             }
         }
-        
+
         //select one row
         public function selectOne($query){
             $row = $this->link->query($query);
@@ -47,6 +47,54 @@
                 return false;
             }
         }
+
+        //function for input validation
+        public function validate($arr){
+            if(in_array("",$arr)){
+                return "empty";
+            }
+        }
+
+
+        //insert Operation
+        public function insert($query, $arr, $path){
+            if($this->validate($arr) == "empty"){
+                echo "<script>alert('one or more input fields are empty !!') </script>";
+            }else{
+                $insert_record = $this->link->prepare($query);
+                $insert_record->execute($arr);
+                
+                header("location: ".$path."");
+            }
+        }
+
+        //Update Operation
+        public function update($query, $arr, $path){
+            if($this->validate($arr) == "empty"){
+                echo "<script>alert('one or more input fields are empty !!') </script>";
+            }else{
+                $update_record = $this->link->prepare($query);
+                $update_record->execute($arr);
+                
+                header("location: ".$path."");
+            }
+        }
+
+        //delete Operation
+        public function delete($query, $path){
+
+            $delete_record = $this->link->query($query);
+            $delete_record->execute();
+            
+            header("location: ".$path."");
+            
+        }
+
+
+
+
+
+    //end of App Class    
     }
 
     $obj = new App;
