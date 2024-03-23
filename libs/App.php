@@ -121,7 +121,17 @@
                 }
             }
         }
+        //starting Session
+        public function startingSession(){
+            session_start();
+        }
 
+        //validation Session
+        public function validateSession($path){
+            if(isset($_SESSION['id'])){
+                header("location:".$path."");
+            }
+        }
 
 
     //end of App Class    
