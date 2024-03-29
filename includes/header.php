@@ -1,3 +1,9 @@
+<?php
+define("APPURL", "http://localhost/Restaurant");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,15 +27,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="<?php echo APPURL; ?>/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="<?php echo APPURL; ?>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?php echo APPURL; ?>/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo APPURL ?>/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo APPURL ?>/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,11 +67,11 @@
                         <a href="menu.html" class="nav-item nav-link">Menu</a>
                         <a href="cart.html" class="nav-item nav-link"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Cart</a>
 
-                      
+
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <a href="login.html" class="nav-item nav-link">Login</a>
                         <a href="register.html" class="nav-item nav-link">Register</a>
                     </div>
-                   
+
                 </div>
             </nav>
