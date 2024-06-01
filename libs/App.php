@@ -120,7 +120,9 @@ class App
         if ($login_user->rowCount() > 0) {
             if (password_verify($data['password'], $fetch['password'])) {
                 //start session
-
+                $_SESSION['email'] = $fetch['email'];
+                $_SESSION['username'] = $fetch['userName'];
+                $_SESSION['user_id'] = $fetch['id'];
 
                 header("location:" . $path . "");
             }
@@ -133,10 +135,10 @@ class App
     }
 
     //validation Session
-    public function validateSession($path)
+    public function validateSession()
     {
-        if (isset($_SESSION['id'])) {
-            header("location:" . $path . "");
+        if (isset($_SESSION['user_id'])) {
+            echo "<script>window.location.href='" . APPURL . "'</script>";
         }
     }
 
